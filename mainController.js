@@ -5,5 +5,5 @@
 
 angular.module('myFirstApp', [])
   .controller('mainController', function ($scope) {
-    $scope.myValue = 'Hello World!!!';
+    $scope.myValue = '';
   });
