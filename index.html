@@ -4,8 +4,24 @@
 </head>
 <body ng-app="myFirstApp">
   <div ng-controller="mainController">
-    Name: <input type="text" ng-model="myValue"></input>
-    Hello {{myValue}}!!!
+    Name: <input type="text" ng-model="name"></input><br>
+    Number: <input type="text" ng-model="number"></input><br>
+    <button ng-click="addContact(name, number)">Add</button>
+    <br>
+    <br>
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Number</th>
+        <th></th>
+      </tr>
+      <!-- forEach contact in contacts -->
+      <tr ng-repeat="contact in contacts">
+        <td>{{contact.name}}</td>
+        <td>{{contact.number}}</td>
+        <td><button ng-click="deleteContact(contact)">Delete</button></td>
+      </tr>
+    </table>
   </div>
   <script src="angular.js"></script>
   <script src="mainController.js"></script>
