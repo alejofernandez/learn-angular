@@ -8,16 +8,18 @@
     Number: <input type="text" ng-model="number"></input><br>
     <button ng-click="addContact(name, number)">Add</button>
     <br>
+    <br>
     Filter by: <input type="text" ng-model="query"></input><br>
     <br>
+    <button ng-click="loadContacts()">Refresh</button>
     <table>
       <tr>
-        <th>Name</th>
-        <th>Number</th>
+        <th ng-click="sortBy('name')">Name</th>
+        <th ng-click="sortBy('number')">Number</th>
         <th></th>
       </tr>
       <!-- forEach contact in contacts -->
-      <tr ng-repeat="contact in contacts | filter:query">
+      <tr ng-repeat="contact in contacts | filter:query | orderBy: sortOrder ">
         <td>{{contact.name}}</td>
         <td>{{contact.number}}</td>
         <td><button ng-click="deleteContact(contact)">Delete</button></td>

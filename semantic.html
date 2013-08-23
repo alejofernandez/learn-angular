@@ -1,0 +1,35 @@
+<section role="environment">
+	<header>
+		<h1>My environment</h1>
+	</header>
+	<span role="applicationCount">5</span>
+	<section role="application">
+		<header>
+			<h1>My Application 1</h1>
+		</header>
+	</section>
+	<section role="application">
+		<header>
+			<h1>My Application 2</h1>
+		</header>
+	</section>
+</section>
+
+//css
+section[role=environment] {
+	display: block;
+	border: 1px solid black;
+}
+
+section[role=environment] > span[role=applicationCount] {
+	display: none;
+}
+
+section[role=environment]:hover > span[role=applicationCount] {
+	display: block;
+}
+
+section[role=environment]:not(.active) section[role=application] {
+	display: none;
+}
+

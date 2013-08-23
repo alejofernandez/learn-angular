@@ -1,0 +1,6 @@
+[{
+  "name": "Production",
+  "applications": [{
+      "name": "My App"
+    }]
+}]
