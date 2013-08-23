@@ -8,6 +8,7 @@
     Number: <input type="text" ng-model="number"></input><br>
     <button ng-click="addContact(name, number)">Add</button>
     <br>
+    Filter by: <input type="text" ng-model="query"></input><br>
     <br>
     <table>
       <tr>
@@ -16,7 +17,7 @@
         <th></th>
       </tr>
       <!-- forEach contact in contacts -->
-      <tr ng-repeat="contact in contacts">
+      <tr ng-repeat="contact in contacts | filter:query">
         <td>{{contact.name}}</td>
         <td>{{contact.number}}</td>
         <td><button ng-click="deleteContact(contact)">Delete</button></td>
